@@ -1,5 +1,5 @@
 {
-  "name": "jsonata-transform-component",
+  "name": "snazzycontacts-jsonata-transform-component",
   "version": "1.0.0",
   "description": "elastic.io integration component for data transformation with JSONata expression",
   "homepage": "https://www.elastic.io",
