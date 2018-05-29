@@ -25,7 +25,7 @@
     "jsonata": "^1.5.3"
   },
   "scripts": {
-    
+
   },
   "devDependencies": {
     "chai": "^3.5.0",
