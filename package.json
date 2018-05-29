@@ -24,9 +24,6 @@
     "elasticio-sailor-nodejs": "^2.2.1",
     "jsonata": "^1.5.3"
   },
-  "scripts": {
-
-  },
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.1.1",
