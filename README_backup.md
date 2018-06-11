@@ -1,4 +1,4 @@
-# snazzycontacts-jsonata-transform-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# jsonata-transform-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Dedicated data transformation component for elastic.io platform based on JSONata
 
 ## Authentication
@@ -7,7 +7,7 @@ This component requires no authentication.
 
 ## How it works
 
-This component takes the incoming message body and applies the configured JSONata tranformation on it. It uses
+This component takes the incoming message body and applies the configured JSONata tranformation on it. It uses 
 a fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is
 a valid JSONata expression.
 
