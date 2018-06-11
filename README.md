@@ -23,7 +23,7 @@ Let's see how the action **Transform from OIH** works. For example let's take th
 }
 ```
 
-The result of that transofrmation will be the following JSON document:
+The result of that transformation will be the following JSON document:
 
 ```json
 {
