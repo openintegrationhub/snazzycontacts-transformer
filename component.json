@@ -4,6 +4,7 @@
   "actions": {
     "transformFromOih": {
       "title": "Transform from OIH",
+      "description": "Transform the incoming data from OIH",
       "main": "./lib/actions/transformFromOih.js",
       "metadata": {
         "out": {}
@@ -11,6 +12,7 @@
     },
     "transformToOih": {
       "title": "Transform to OIH",
+      "description": "Transform the incoming data to OIH",
       "main": "./lib/actions/transformToOih.js",
       "metadata": {
         "out": {}

@@ -8,109 +8,57 @@ This component requires no authentication.
 ## How it works
 
 The component supports two actions - **Transform to OIH** and **Transform from OIH**. This means that the component takes the incoming message body from the previous step and creates a new expression in a ``JSON`` format. The new generated ``JSON`` object has specific properties which represent the input/output for the next/previous component in the flow.
-The usesa fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is
+The uses a fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is
 a valid JSONata expression.
 
-For example let's take this sample incoming message body:
+Let's see how the action **Transform from OIH** works. For example let's take this sample incoming message body from **OIH Database component** and transform it to a valid [Snazzy Contacts](https://snazzycontacts.com) object:
 
-```json
+```js
 {
   "rowid": msg.body.applicationRecordUid,
   "tenant": msg.body.tenant,
   "name": msg.body.lastName,
-  "firstname": msg.body.firstName
-}
-{
-  "Account": {
-    "Account Name": "Firefly",
-    "Order": [
-      {
-        "OrderID": "order103",
-        "Product": [
-          {
-            "Product Name": "Bowler Hat",
-            "ProductID": 858383,
-            "SKU": "0406654608",
-            "Description": {
-              "Colour": "Purple",
-              "Width": 300,
-              "Height": 200,
-              "Depth": 210,
-              "Weight": 0.75
-            },
-            "Price": 34.45,
-            "Quantity": 2
-          },
-          {
-            "Product Name": "Trilby hat",
-            "ProductID": 858236,
-            "SKU": "0406634348",
-            "Description": {
-              "Colour": "Orange",
-              "Width": 300,
-              "Height": 200,
-              "Depth": 210,
-              "Weight": 0.6
-            },
-            "Price": 21.67,
-            "Quantity": 1
-          }
-        ]
-      }
-    ]
-  }
+  "firstname": msg.body.firstName,
+  "salutation": msg.body.salutation,
+  "date_of_birth": msg.body.birthday
 }
 ```
 
-You can use following JSONata expressions to transform it:
-
-```jsonata
-{
-	"account": Account."Account Name",
-	"orderCount" : $count(Account.Order)
-}
-```
-
-result of that transofrmation will be the following JSON document ([jsonata link](http://try.jsonata.org/B1ctn36ub)):
+The result of that transofrmation will be the following JSON document:
 
 ```json
 {
-  "account": "Firefly",
-  "orderCount": 1
+  "rowid": "198562",
+  "tenant": "617",
+  "name": "Doe",
+  "firstname": "John",
+  "salutation": "Mr.",
+  "date_of_birth": "04.11.1980"
 }
 ```
+The action **Transform to OIH** works the same way.
 
-I hope you've got the idea. Now you can also do something more complicated, like this array-to-array transformation:
-
-```jsonata
+```js
 {
-    "account": Account."Account Name",
-    "products": Account.Order.Product.({
-    	"name": $."Product Name",
-        "revenue": (Price * Quantity)
-    }),
-    "orderIDs": Account.Order[].(OrderID)
+  "recordUid": msg.body.rowid,
+  "oihLastModified": jsonata("$now()").evaluate(),
+  "lastName": msg.body.name,
+  "firstName": msg.body.firstname,
+  "salutation": msg.body.salutation,
+  "birthday": msg.body.date_of_birth,
 }
 ```
 
-resulting in ([jsonata link](http://try.jsonata.org/B1ctn36ub)):
+The result of that transofrmation will be the following JSON document:
 
 ```json
 {
-  "account": "Firefly",
-  "products": [
-    {
-      "name": "Bowler Hat",
-      "revenue": 68.9
-    },
-    {
-      "name": "Trilby hat",
-      "revenue": 21.67
-    }
-  ],
-  "orderIDs": [
-    "order103"
-  ]
+  "recordUid": "198562",
+  "oihLastModified": "2018-06-11T09:41:45.679Z",
+  "lastName": "Doe",
+  "firstName": "John",
+  "salutation": "Mr.",
+  "birthday": "04.11.1980"
 }
 ```
 
