@@ -1,5 +1,5 @@
 # snazzycontacts-jsonata-transform-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Dedicated data transformation component for elastic.io platform based on JSONata
+> Dedicated [Snazzy Contacts](https://snazzycontacts.com) data transformation component for elastic.io platform based on JSONata
 
 ## Authentication
 
@@ -7,13 +7,19 @@ This component requires no authentication.
 
 ## How it works
 
-This component takes the incoming message body and applies the configured JSONata tranformation on it. It uses
-a fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is
+The component supports two actions - **Transform to OIH** and **Transform from OIH**. This means that the component takes the incoming message body from the previous step and creates a new expression in a ``JSON`` format. The new generated ``JSON`` object has specific properties which represent the input/output for the next/previous component in the flow.
+The usesa fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is
 a valid JSONata expression.
 
 For example let's take this sample incoming message body:
 
 ```json
+{
+  "rowid": msg.body.applicationRecordUid,
+  "tenant": msg.body.tenant,
+  "name": msg.body.lastName,
+  "firstname": msg.body.firstName
+}
 {
   "Account": {
     "Account Name": "Firefly",
