@@ -12,7 +12,7 @@ describe('Transformation test', () => {
       'lastName': 'Doe'
     };
 
-    return transform(exp)
+    return transform.process(exp)
     .then(result => {
       console.log(`RESULT: ${result}`);
       // expect(result.body).to.deep.equal({
