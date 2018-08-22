@@ -24,6 +24,10 @@
     "elasticio-sailor-nodejs": "^2.2.1",
     "jsonata": "^1.5.3"
   },
+  "scripts": {
+    "pretest": "eslint lib spec --ext .json --ext .js --fix",
+    "test": "NODE_ENV=test mocha spec/*"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.1.1",
