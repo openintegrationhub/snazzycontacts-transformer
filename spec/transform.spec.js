@@ -106,10 +106,12 @@ describe('Transformation test', () => {
     return transform.process(eioUtils.newMessageWithBody(exp))
     .then(result => {
       console.log(`RESULT: ${result}`);
-      expect(result.body).to.be.an('object');
-      // expect(result.body).to.deep.equal({
-      //   fullName: 'Renat Zubairov'
-      // });
+      // expect(result.body).to.be.an('object');
+      expect(result.body).to.deep.equal({
+        firstName: "John",
+        middleName: "Anthony",
+        lastName: "Doe"
+      });
     });
   });
 
