@@ -105,7 +105,7 @@ describe('Transformation test', () => {
 
     return transform.process(eioUtils.newMessageWithBody(exp))
     .then(result => {
-      console.log(`RESULT: ${result}`);
+      console.log(`RESULT: ${JSON.stringify(result, undefined, 2)}`);
       expect(result.body).to.be.an('object');
       // expect(result.body).to.deep.include({
       //   firstName: "John",
