@@ -107,7 +107,7 @@ describe('Transformation test', () => {
     .then(result => {
       console.log(`RESULT: ${result}`);
       // expect(result.body).to.be.an('object');
-      expect(result.body).to.deep.equal({
+      expect(result.body).to.deep.include({
         firstName: "John",
         middleName: "Anthony",
         lastName: "Doe"
