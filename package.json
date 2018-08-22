@@ -25,6 +25,7 @@
     "jsonata": "^1.5.3"
   },
   "scripts": {
+    "pretest": "eslint lib spec --ext .json --fix",
     "test": "NODE_ENV=test mocha spec/*"
   },
   "devDependencies": {
