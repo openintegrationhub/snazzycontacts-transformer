@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 
 const expect = require('chai').expect;
-const transform = require('../lib/actions/transformPersonToOih');
+const transform = require('../lib/actions/transformPersonFromOih');
 const eioUtils = require('elasticio-node').messages;
 
 describe('Transformation test', () => {
