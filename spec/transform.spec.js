@@ -3,12 +3,12 @@
 const expect = require('chai').expect;
 const transform = require('../lib/actions/transformPersonFromOih');
 const eioUtils = require('elasticio-node').messages;
-const personExpression = require('seed/person');
+const personExpression = require('./seed/person');
 
 describe('Transformation test', () => {
 
   it('should handle simple transforms', () => {
-    return transform.process(eioUtils.newMessageWithBody(exp))
+    return transform.process(eioUtils.newMessageWithBody(personExpression))
     .then(result => {
       console.log(`RESULT: ${JSON.stringify(result, undefined, 2)}`);
       expect(result.body).to.be.an('object');
