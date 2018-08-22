@@ -1,16 +1,18 @@
 /* eslint-disable arrow-body-style */
 
 const expect = require('chai').expect;
-const transform = require('../lib/actions/transform');
+const transform = require('../lib/actions/transformPersonToOih');
 const eioUtils = require('elasticio-node').messages;
 
 describe('Transformation test', () => {
 
   it('should handle simple transforms', () => {
-    return transform({
+    const exp = {
       'firstName': 'John',
       'lastName': 'Doe'
-    })
+    };
+
+    return transform.processAction(exp)
     .then(result => {
       console.log(`RESULT: ${result}`);
       // expect(result.body).to.deep.equal({
