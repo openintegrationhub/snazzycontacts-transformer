@@ -8,7 +8,7 @@ describe('Transformation test', () => {
 
   it('should handle simple transforms', () => {
     const exp = {
-      'rowid': '12345'
+      'rowid': '12345',
       'firstName': 'John',
       'lastName': 'Doe'
     };
@@ -16,6 +16,7 @@ describe('Transformation test', () => {
     return transform.process(exp)
     .then(result => {
       console.log(`RESULT: ${result}`);
+      expect(result.body).to.be.an('object');
       // expect(result.body).to.deep.equal({
       //   fullName: 'Renat Zubairov'
       // });
