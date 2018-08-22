@@ -7,10 +7,10 @@ const eioUtils = require('elasticio-node').messages;
 describe('Transformation test', () => {
 
   it('should handle simple transforms', () => {
-    return transform.process(eioUtils.newMessageWithBody({
+    return transform({
       'firstName': 'John',
       'lastName': 'Doe'
-    }))
+    })
     .then(result => {
       console.log(`RESULT: ${result}`);
       // expect(result.body).to.deep.equal({
