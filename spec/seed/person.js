@@ -1,6 +1,5 @@
-module.exports.person = () => {
-
-  const exp = {
+const person = () => {
+  const expression = {
     "title": "Prof.",
     "salutation": "Mr.",
     "firstName": "John",
@@ -95,6 +94,7 @@ module.exports.person = () => {
       }
     ]
   };
+  return expression;
+}
 
-  return exp;
-};
+module.exports = { person };
