@@ -1,5 +1,5 @@
-const person = () => {
-  const expression = {
+const personFromOih = () => {
+  return expression = {
     "title": "Prof.",
     "salutation": "Mr.",
     "firstName": "John",
@@ -94,7 +94,19 @@ const person = () => {
       }
     ]
   };
-  return expression;
 }
 
-module.exports = { person };
+const personToOih = () => {
+  return expression = {
+    "rowid": 98123,
+    "name": "Smith",
+    "firstname": "Mark",
+    "private_street": "Main Str. 120",
+    "position": "Marketing Manager",
+    "title": "Prof",
+    "phone": 830238131,
+    "email": "m.smith@mail.com"
+  };
+}
+
+module.exports = { personFromOih, personToOih };
