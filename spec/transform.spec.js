@@ -41,23 +41,22 @@ describe('Transformation test', () => {
 
   it('should handle simple person tranformation in direction to OIH', () => {
     const exp = personToOih();
-    const street = exp.private_street.split(' ');
     return transformPersonToOih.process(messages.newMessageWithBody(exp))
       .then(result => {
         expect(result.body).to.be.an('object');
         expect(result.body).to.deep.include({
-          firstName: exp.firstname,
-          lastName: exp.name,
-          jobTitle: exp.position
+          firstName: 'Mark',
+          lastName: 'Smith',
+          jobTitle: 'Marketing Manager'
         });
         expect(result.body.test).to.be.undefined;
         expect(result.body.oihApplicationRecords[0]).to.deep.include({
-          recordUid: exp.rowid
+          recordUid: 98123
         });
         expect(result.body.addresses).to.be.an('array');
         expect(result.body.addresses[0]).to.deep.include({
-          street: `${street[0]} ${street[1]}`,
-          streetNumber: parseInt(street[2], 10)
+          street: 'Main Str.',
+          streetNumber: 120
         });
       });
   });
