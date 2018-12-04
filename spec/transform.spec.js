@@ -32,7 +32,7 @@ describe('Transformation test', () => {
       });
   });
 
-  it('should not produce an empty message if transformation returns undefined', () => {
+  it('should produce an empty message if transformation returns undefined', () => {
     return transformPersonFromOih.process(messages.newMessageWithBody({}))
       .then(result => {
         expect(result).to.be.undefined;
@@ -61,7 +61,7 @@ describe('Transformation test', () => {
       });
   });
 
-  it('should not produce an empty message if transformation returns undefined', () => {
+  it('should produce an empty message if transformation returns undefined', () => {
     return transformPersonToOih.process(messages.newMessageWithBody({}))
       .then(result => {
         expect(result).to.be.undefined;
