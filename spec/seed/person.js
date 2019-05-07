@@ -104,8 +104,9 @@ const personFromOih = () => {
 const personToOih = () => {
   const expression = {
     rowid: 98123,
-    name: 'Smith',
-    firstname: 'Mark',
+    // name: 'Smith',
+    lastName: 'Smith',
+    firstName: 'Mark',
     private_street: 'Main Str. 120',
     position: 'Marketing Manager',
     title: 'Prof',
