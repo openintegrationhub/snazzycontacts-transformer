@@ -25,6 +25,7 @@
     "jsonata": "^1.5.3"
   },
   "scripts": {
+    "start": "node ./node_modules/elasticio-sailor-nodejs/run.js",
     "pretest": "eslint lib spec --ext .json --ext .js --fix",
     "test": "NODE_ENV=test mocha spec/*",
     "test-watch": "nodemon --exec \"npm test \""
@@ -43,7 +44,12 @@
       "mocha": true
     },
     "rules": {
-        "camelcase": [2, {"properties": "never"}]
+      "camelcase": [
+        2,
+        {
+          "properties": "never"
+        }
+      ]
     }
   },
   "engines": {
