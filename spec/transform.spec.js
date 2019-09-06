@@ -13,8 +13,8 @@ describe('Transformation test', () => {
     return transformPersonFromOih.process(messages.newMessageWithBody(exp))
       .then(result => {
         expect(result.body).to.be.an('object');
-        expect(result.body.firstName).to.be.equal('John');
-        expect(result.body.lastName).to.be.equal('Doe');
+        expect(result.body.data.firstName).to.be.equal('John');
+        expect(result.body.data.lastName).to.be.equal('Doe');
         // expect(result.data).to.deep.include({
         //   rowid: '98765',
         //   name: 'Doe',
@@ -46,8 +46,8 @@ describe('Transformation test', () => {
     return transformPersonToOih.process(messages.newMessageWithBody(exp))
       .then(result => {
         expect(result.body).to.be.an('object');
-        expect(result.body.firstName).to.be.equal('Mark');
-        expect(result.body.lastName).to.be.equal('Smith');
+        expect(result.body.data.firstName).to.be.equal('Mark');
+        expect(result.body.data.lastName).to.be.equal('Smith');
         // expect(result.body).to.deep.include({
         //   firstName: 'Mark',
         //   lastName: 'Smith',
