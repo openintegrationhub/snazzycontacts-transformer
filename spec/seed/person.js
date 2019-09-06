@@ -115,17 +115,14 @@ const personToOih = () => {
       oihUidEncrypted: ''
     },
     data: {
-      payload: {
-        uid: 98123,
-        // name: 'Smith',
-        lastName: 'Smith',
-        firstName: 'Mark',
-        private_street: 'Main Str. 120',
-        position: 'Marketing Manager',
-        title: 'Prof',
-        phone: 830238131,
-        email: 'm.smith@mail.com'
-      }
+      uid: 98123,
+      lastName: 'Smith',
+      firstName: 'Mark',
+      private_street: 'Main Str. 120',
+      position: 'Marketing Manager',
+      title: 'Prof',
+      phone: 830238131,
+      email: 'm.smith@mail.com'
     }
   };
   return expression;
