@@ -2,7 +2,7 @@ const personFromOih = () => {
   const expression = {
     meta: {
       applicationUid: '93jlksd',
-      oihUidEncrypted: ''
+      oihUidEncrypted: '',
     },
     data: {
       uid: '123fdsk',
@@ -30,7 +30,7 @@ const personFromOih = () => {
         region: 'NRW',
         country: 'Germany',
         primaryContact: 'Hermann Schmitz',
-        description: 'primary'
+        description: 'primary',
       },
       {
         street: 'Rudolfplatz',
@@ -42,55 +42,55 @@ const personFromOih = () => {
         region: 'NRW',
         country: 'Germany',
         primaryContact: 'Hermann Schmitz',
-        description: 'mailing'
-      }
+        description: 'mailing',
+      },
       ],
       contactData: [{
         value: '123456789',
         type: 'phone',
-        description: 'primary'
+        description: 'primary',
       },
       {
         value: '00224477',
         type: 'phone',
-        description: 'private'
+        description: 'private',
       },
       {
         value: '95248793',
         type: 'phone',
-        description: 'mobile'
+        description: 'mobile',
       },
       {
         value: 'jon@doe.com',
         type: 'email',
-        description: 'private'
+        description: 'private',
       },
       {
         value: 'xing.de/yourUsername',
         type: 'xing',
-        description: 'xing'
+        description: 'xing',
       },
       {
         value: '98326307',
         type: 'phone',
-        description: 'secondary'
-      }
+        description: 'secondary',
+      },
       ],
       calendar: [{
         calendar: 'http://example.org/kalender/emuster',
         busyCalendar: 'http://example.org/kalender/emuster/busy',
         requestCalendar: 'http://example.org/kalender/emuster/appointment',
-        description: 'private'
+        description: 'private',
       }],
       category: [{
         name: 'private',
-        description: 'private address data of the person'
+        description: 'private address data of the person',
       }],
       oihApplicationRecords: [{
         applicationUid: '',
         recordUid: '98765',
         created: '23215151',
-        lastModified: '36542364'
+        lastModified: '36542364',
       },
       {
         applicationUid: '',
@@ -99,11 +99,11 @@ const personFromOih = () => {
         lastModified: {
           userId: '254',
           type: 'modification',
-          timestamp: '2018-01-02'
-        }
-      }
-      ]
-    }
+          timestamp: '2018-01-02',
+        },
+      },
+      ],
+    },
   };
   return expression;
 };
@@ -112,7 +112,7 @@ const personToOih = () => {
   const expression = {
     meta: {
       applicationUid: '93jlksd',
-      oihUidEncrypted: ''
+      oihUidEncrypted: '',
     },
     data: {
       uid: 98123,
@@ -122,10 +122,10 @@ const personToOih = () => {
       position: 'Marketing Manager',
       title: 'Prof',
       phone: 830238131,
-      email: 'm.smith@mail.com'
-    }
+      email: 'm.smith@mail.com',
+    },
   };
   return expression;
 };
 
-module.exports = {personFromOih, personToOih};
+module.exports = { personFromOih, personToOih };

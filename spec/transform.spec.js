@@ -1,9 +1,9 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-unused-expressions */
 
-const {expect} = require('chai');
-const {messages} = require('elasticio-node');
-const {personFromOih, personToOih} = require('./seed/person');
+const { expect } = require('chai');
+const { messages } = require('elasticio-node');
+const { personFromOih, personToOih } = require('./seed/person');
 const transformPersonFromOih = require('../lib/actions/transformPersonFromOih');
 const transformPersonToOih = require('../lib/actions/transformPersonToOih');
 
@@ -11,7 +11,7 @@ describe('Transformation test', () => {
   it('should handle simple person tranformation in direction from OIH', () => {
     const exp = personFromOih();
     return transformPersonFromOih.process(messages.newMessageWithBody(exp))
-      .then(result => {
+      .then((result) => {
         expect(result.body).to.be.an('object');
         expect(result.body.data.firstName).to.be.equal('John');
         expect(result.body.data.lastName).to.be.equal('Doe');
@@ -36,7 +36,7 @@ describe('Transformation test', () => {
 
   it('should produce an empty message if transformation returns undefined', () => {
     return transformPersonFromOih.process(messages.newMessageWithBody({}))
-      .then(result => {
+      .then((result) => {
         expect(result).to.be.undefined;
       });
   });
@@ -44,7 +44,7 @@ describe('Transformation test', () => {
   it('should handle simple person tranformation in direction to OIH', () => {
     const exp = personToOih();
     return transformPersonToOih.process(messages.newMessageWithBody(exp))
-      .then(result => {
+      .then((result) => {
         expect(result.body).to.be.an('object');
         expect(result.body.data.firstName).to.be.equal('Mark');
         expect(result.body.data.lastName).to.be.equal('Smith');
@@ -67,7 +67,7 @@ describe('Transformation test', () => {
 
   it('should produce an empty message if transformation returns undefined', () => {
     return transformPersonToOih.process(messages.newMessageWithBody({}))
-      .then(result => {
+      .then((result) => {
         expect(result).to.be.undefined;
       });
   });
