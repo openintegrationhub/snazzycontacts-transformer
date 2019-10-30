@@ -2,7 +2,8 @@ const personFromOih = () => {
   const expression = {
     meta: {
       applicationUid: '93jlksd',
-      oihUidEncrypted: '',
+      oihUid: 'hjkh4321jk',
+      recordUid: '123fdsk',
     },
     data: {
       uid: '123fdsk',
@@ -118,11 +119,38 @@ const personToOih = () => {
       uid: 98123,
       lastName: 'Smith',
       firstName: 'Mark',
-      private_street: 'Main Str. 120',
+      addresses: [
+        {
+          street: 'Main Str.',
+          streetNumber: '120',
+          city: 'Hamburg',
+          zipCode: '20537',
+          country: 'Germany',
+        },
+        {
+          street: 'Some Str.',
+          streetNumber: '20',
+          city: 'Cologne',
+          zipCode: '50213',
+          country: 'Germany',
+        },
+      ],
+      contactData: [
+        {
+          type: 'phone',
+          value: '0404130350',
+          uid: 'yj53t1k18zdiu7',
+          categories: [],
+        },
+        {
+          type: 'email',
+          value: 'm.smith@mail.com',
+          uid: 'yj53t1k18zdiu8',
+          categories: [],
+        },
+      ],
       position: 'Marketing Manager',
       title: 'Prof',
-      phone: 830238131,
-      email: 'm.smith@mail.com',
     },
   };
   return expression;

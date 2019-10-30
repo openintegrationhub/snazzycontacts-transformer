@@ -15,22 +15,19 @@ describe('Transformation test', () => {
         expect(result.body).to.be.an('object');
         expect(result.body.data.firstName).to.be.equal('John');
         expect(result.body.data.lastName).to.be.equal('Doe');
-        // expect(result.data).to.deep.include({
-        //   rowid: '98765',
-        //   name: 'Doe',
-        //   firstname: 'John',
-        //   position: 'Sales manager',
-        //   private_street: 's',
-        //   private_street_number: '3',
-        //   private_zip_code: '50667',
-        //   private_town: 'Cologne',
-        //   private_country: 'Germany',
-        //   email: 'jon@doe.com',
-        //   phone: '123456789',
-        //   mobile_phone: '98326307',
-        //   xing_url: 'xing.de/yourUsername',
-        //   last_update: '2018-01-02'
-        // });
+        expect(result.body.data.addresses).to.have.length(2);
+        expect(result.body.data.addresses[0].street).to.be.equal('Hohestr');
+        expect(result.body.data.addresses[0].streetNumber).to.be.equal('3');
+        expect(result.body.data.addresses[0].unit).to.be.equal('a');
+        expect(result.body.data.addresses[0].zipCode).to.be.equal('50667');
+        expect(result.body.data.addresses[0].city).to.be.equal('Cologne');
+        expect(result.body.data.addresses[0].district).to.be.equal('Alstadt-Sued');
+        expect(result.body.data.addresses[0].region).to.be.equal('NRW');
+        expect(result.body.data.addresses[0].country).to.be.equal('Germany');
+        expect(result.body.data.contactData).to.have.length(6);
+        expect(result.body.data.contactData[0].value).to.be.equal('123456789');
+        expect(result.body.data.contactData[0].type).to.be.equal('phone');
+        expect(result.body.data.contactData[0].description).to.be.equal('primary');
       });
   });
 
@@ -48,20 +45,12 @@ describe('Transformation test', () => {
         expect(result.body).to.be.an('object');
         expect(result.body.data.firstName).to.be.equal('Mark');
         expect(result.body.data.lastName).to.be.equal('Smith');
-        // expect(result.body).to.deep.include({
-        //   firstName: 'Mark',
-        //   lastName: 'Smith',
-        //   jobTitle: 'Marketing Manager'
-        // });
-        // expect(result.body.test).to.be.undefined;
-        // expect(result.body.oihApplicationRecords[0]).to.deep.include({
-        //   recordUid: 98123
-        // });
-        // expect(result.body.addresses).to.be.an('array');
-        // expect(result.body.addresses[0]).to.deep.include({
-        //   street: 'Main Str.',
-        //   streetNumber: 120
-        // });
+        expect(result.body.data.addresses[0].street).to.be.equal('Main Str.');
+        expect(result.body.data.addresses[0].streetNumber).to.be.equal('120');
+        expect(result.body.data.addresses[0].city).to.be.equal('Hamburg');
+        expect(result.body.data.addresses[0].country).to.be.equal('Germany');
+        expect(result.body.data.contactData[1].type).to.be.equal('email');
+        expect(result.body.data.contactData[1].value).to.be.equal('m.smith@mail.com');
       });
   });
 
