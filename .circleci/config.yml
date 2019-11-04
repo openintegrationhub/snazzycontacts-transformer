@@ -23,7 +23,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
       # Run tests
       - run: yarn test
       - setup_remote_docker
@@ -39,8 +38,6 @@ jobs:
           root: .
           paths:
             - ./image.tar
-      - run:
-          command: docker images
   # Publish the image on Dockerhub
   publish-latest:
     executor: docker-publisher
