@@ -17,6 +17,22 @@
       "metadata": {
         "out": {}
       }
+    },
+    "transformOrganizationFromOih": {
+      "title": "Transform an organization from OIH",
+      "description": "Transform the incoming data from OIH",
+      "main": "./lib/actions/transformOrganizationFromOih.js",
+      "metadata": {
+        "out": {}
+      }
+    },
+    "transformOrganizationToOih": {
+      "title": "Transform an organization to OIH",
+      "description": "Transform the incoming data to OIH",
+      "main": "./lib/actions/transformOrganizationToOih.js",
+      "metadata": {
+        "out": {}
+      }
     }
   }
 }
