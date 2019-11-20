@@ -28,12 +28,14 @@ Let's see how the action **Transform from OIH** works. For example let's take th
 
 ```js
 {
-  "rowid": msg.body.applicationRecordUid,
-  "tenant": msg.body.tenant,
-  "name": msg.body.lastName,
-  "firstname": msg.body.firstName,
-  "salutation": msg.body.salutation,
-  "date_of_birth": msg.body.birthday
+    firstName: msg.body.data.firstName,
+    lastName: msg.body.data.lastName,
+    position: msg.body.data.position,
+    title: msg.body.data.title,
+    jobTitle: msg.body.data.jobTitle,
+    salutation: msg.body.data.salutation,
+    gender: msg.body.data.gender,
+    birthday: msg.body.data.birthday
 }
 ```
 
@@ -41,12 +43,13 @@ The result of that transformation will be the following JSON document:
 
 ```json
 {
-  "rowid": "198562",
-  "tenant": "617",
-  "name": "Doe",
-  "firstname": "John",
+  "firstName": "John",
+  "lastName": "Doe",
+  "title": "Doe",
+  "jobTitle": "Manager",
   "salutation": "Mr.",
-  "date_of_birth": "04.11.1980"
+  "gender": "male",
+  "birthday": "04.11.1980"
 }
 ```
 
@@ -54,12 +57,14 @@ The action **Transform to OIH** works the same way. Let's take this incoming mes
 
 ```js
 {
-  "recordUid": msg.body.rowid,
-  "oihLastModified": jsonata("$now()").evaluate(),
-  "lastName": msg.body.name,
-  "firstName": msg.body.firstname,
-  "salutation": msg.body.salutation,
-  "birthday": msg.body.date_of_birth,
+    firstName: msg.body.data.firstName,
+    lastName: msg.body.data.lastName,
+    position: msg.body.data.position,
+    title: msg.body.data.title,
+    jobTitle: msg.body.data.jobTitle,
+    salutation: msg.body.data.salutation,
+    gender: msg.body.data.gender,
+    birthday: msg.body.data.birthday
 }
 ```
 
@@ -67,11 +72,12 @@ The result of that transofrmation will be the following JSON document:
 
 ```json
 {
-  "recordUid": "198562",
-  "oihLastModified": "2018-06-11T09:41:45.679Z",
-  "lastName": "Doe",
   "firstName": "John",
+  "lastName": "Doe",
+  "title": "Doe",
+  "jobTitle": "Manager",
   "salutation": "Mr.",
+  "gender": "male",
   "birthday": "04.11.1980"
 }
 ```
