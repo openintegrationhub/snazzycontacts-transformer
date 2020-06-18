@@ -1,5 +1,8 @@
-# snazzycontacts-jsonata-transform-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Dedicated [Snazzy Contacts](https://snazzycontacts.com) data transformation component for elastic.io platform based on JSONata
+# test-jsonata-transform-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+An simple test transformer component for testing the new OIH ferryman. Modified ferryman versions can be placed and installed in the ferryman sub folder.
+
+This component is based on the Snazzy Contacts Transformer.
 
 ## Authentication
 

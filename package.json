@@ -1,7 +1,7 @@
 {
-  "name": "@oih/snazzycontacts-transformer",
+  "name": "@oih/test-transformer",
   "version": "1.2.1",
-  "description": "OIH Transformer for Snazzy Contacts",
+  "description": "OIH Test Transformer",
   "homepage": "https://snazzycontacts.com/",
   "author": {
     "name": "Wice GmbH",
@@ -18,7 +18,7 @@
     "oih-transformer"
   ],
   "scripts": {
-    "start": "node ./node_modules/elasticio-sailor-nodejs/run.js",
+    "start": "node ./ferryman/runGlobal.js",
     "pretest": "eslint lib test --ext .json --ext .js --fix",
     "test": "NODE_ENV=test mocha test/*",
     "test-watch": "nodemon --exec \"npm test \""
@@ -32,7 +32,6 @@
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1",
     "elasticio-node": "0.0.9",
-    "elasticio-sailor-nodejs": "2.2.1",
     "jsonata": "^1.5.3"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 FROM node:10-alpine
-LABEL NAME="snazzy-contacts-transformer"
-LABEL MAINTAINER Shterion Yanev "syanev@wice.de"
-LABEL SUMMARY="This image is used to start the Snazzy Contacts Transformer for OIH"
+LABEL NAME="test-transformer"
+LABEL MAINTAINER Johannes Knoop "jknoop@wice.de"
+LABEL SUMMARY="This image is used to start the Test Transformer for OIH"
 
 RUN apk --no-cache add \
     python \
@@ -14,6 +14,8 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 
 RUN npm install --production
+
+RUN cd ferryman && npm install --production && cd ..
 
 COPY . /usr/src/app
 
