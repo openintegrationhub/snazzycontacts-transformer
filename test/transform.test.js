@@ -3,14 +3,14 @@
 
 const { expect } = require('chai');
 const { messages } = require('elasticio-node');
-const { personFromOih, personToOih } = require('./seed/person');
-const transformPersonFromOih = require('../lib/actions/transformPersonFromOih');
-const transformPersonToOih = require('../lib/actions/transformPersonToOih');
+const { personFromOih } = require('./seed/person');
+const testAction = require('../lib/actions/testAction');
+
 
 describe('Transformation test', () => {
   it('should handle simple person tranformation in direction from OIH', () => {
     const exp = personFromOih();
-    return transformPersonFromOih.process(messages.newMessageWithBody(exp))
+    return testAction.process(messages.newMessageWithBody(exp))
       .then((result) => {
         expect(result.body).to.be.an('object');
         expect(result.body.data.firstName).to.be.equal('John');
@@ -28,36 +28,6 @@ describe('Transformation test', () => {
         expect(result.body.data.contactData[0].value).to.be.equal('123456789');
         expect(result.body.data.contactData[0].type).to.be.equal('phone');
         expect(result.body.data.contactData[0].description).to.be.equal('primary');
-      });
-  });
-
-  it('should produce an empty message if transformation returns undefined', () => {
-    return transformPersonFromOih.process(messages.newMessageWithBody({}))
-      .then((result) => {
-        expect(result).to.be.undefined;
-      });
-  });
-
-  it('should handle simple person tranformation in direction to OIH', () => {
-    const exp = personToOih();
-    return transformPersonToOih.process(messages.newMessageWithBody(exp))
-      .then((result) => {
-        expect(result.body).to.be.an('object');
-        expect(result.body.data.firstName).to.be.equal('Mark');
-        expect(result.body.data.lastName).to.be.equal('Smith');
-        expect(result.body.data.addresses[0].street).to.be.equal('Main Str.');
-        expect(result.body.data.addresses[0].streetNumber).to.be.equal('120');
-        expect(result.body.data.addresses[0].city).to.be.equal('Hamburg');
-        expect(result.body.data.addresses[0].country).to.be.equal('Germany');
-        expect(result.body.data.contactData[1].type).to.be.equal('email');
-        expect(result.body.data.contactData[1].value).to.be.equal('m.smith@mail.com');
-      });
-  });
-
-  it('should produce an empty message if transformation returns undefined', () => {
-    return transformPersonToOih.process(messages.newMessageWithBody({}))
-      .then((result) => {
-        expect(result).to.be.undefined;
       });
   });
 });
