@@ -2,7 +2,7 @@ version: 2.1
 executors:
   docker-publisher:
     environment:
-      IMAGE_NAME: openintegrationhub/snazzy-transformer
+      IMAGE_NAME: openintegrationhub/dev-connector
     docker:
       - image: circleci/node:8-stretch
 jobs:
