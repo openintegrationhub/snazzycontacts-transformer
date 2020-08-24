@@ -18,7 +18,7 @@
     "oih-transformer"
   ],
   "scripts": {
-    "start": "node ./node_modules/elasticio-sailor-nodejs/run.js",
+    "start": "node ./node_modules/@openintegrationhub/ferryman/runGlobal.js",
     "pretest": "eslint lib test --ext .json --ext .js --fix",
     "test": "NODE_ENV=test mocha test/*",
     "test-watch": "nodemon --exec \"npm test \""
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@elastic.io/jsonata-moment": "1.0.15",
-    "elasticio-sailor-nodejs": "2.2.1",
+    "@openintegrationhub/ferryman": "^1.0.1",
     "jsonata": "^1.5.3",
     "uuid": "^8.2.0"
   },
@@ -40,7 +40,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-mocha": "^5.2.0",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.1"
   },
   "repository": {
     "type": "git",
