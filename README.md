@@ -1,5 +1,5 @@
 # snazzycontacts-jsonata-transform-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Dedicated [Snazzy Contacts](https://snazzycontacts.com) data transformation component for elastic.io platform based on JSONata
+> Dedicated [Snazzy Contacts](https://snazzycontacts.com) data transformation component for Open Integration Hub platform based on JSONata
 
 ## Authentication
 
@@ -7,9 +7,13 @@ This component requires no authentication.
 
 ## How it works
 
-The component supports two actions - **Transform to OIH** and **Transform from OIH**. This means that the component takes the incoming message body from the previous step and creates a new expression in a ``JSON`` format. The new generated ``JSON`` object has specific properties which represent the input/output for the next/previous component in the flow.
+The component supports two actions - **Transform to OIH** and **Transform from OIH**. This means that the component takes the incoming message body from the previous step and creates a new expression in a ``JSON`` format.
+
+The new generated ``JSON`` object has specific properties which represent the input/output for the next/previous component in the flow.
+
 It uses a fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is a valid JSONata expression.
 
+<!--
 [Snazzy Contacts](https://snazzycontacts.com) **Transformer** on [elastic.io](http://elastic.io) graphical interface:
 
 ![transformer](Assets/transformer.png)
@@ -21,6 +25,7 @@ Both available **actions**:
 The generated **sample** as a result:
 
 ![sample](Assets/sample.png)  
+-->
 
 ***  
 
@@ -68,7 +73,7 @@ The action **Transform to OIH** works the same way. Let's take this incoming mes
 }
 ```
 
-The result of that transofrmation will be the following JSON document:
+The result of that transformation will be the following JSON document:
 
 ```json
 {
