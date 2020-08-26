@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@elastic.io/jsonata-moment": "1.0.15",
-    "@openintegrationhub/ferryman": "^1.0.1",
+    "@openintegrationhub/ferryman": "^1.0.4",
     "jsonata": "^1.5.3",
     "uuid": "^8.2.0"
   },
