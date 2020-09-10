@@ -26,6 +26,14 @@
         "out": {}
       }
     },
+    "transformPersonOrOrganizationFromOih": {
+      "title": "Transform a person or organization from OIH",
+      "description": "Conditionally transforms either a person or an organization",
+      "main": "./lib/actions/transformPersonOrOrganizationFromOih.js",
+      "metadata": {
+        "out": {}
+      }
+    },
     "transformOrganizationToOih": {
       "title": "Transform an organization to OIH",
       "description": "Transform the incoming data to OIH",
